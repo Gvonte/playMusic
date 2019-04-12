@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>音乐</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link rel="stylesheet/less" href="css/index.less">
+    <script src="js/less-2.5.3.min.js"></script>
+    <script src="js/prefixfree.min.js"></script>
+    <script>
+        ~function () {
+            let computedREM = function () {
+                let html = document.documentElement,
+                    winW = html.clientWidth,
+                    desW = 640;
+                if (winW >= desW) {
+                    html.style.fontSize = '100px';
+                } else {
+                    html.style.fontSize = winW / desW * 100 + 'px';
+                }
+            };
+            computedREM();
+            window.addEventListener('resize', computedREM);
+        }();
+    </script>
+</head>
+<body>
+<main class="mainBox">
+    <!--BACKGROUND-->
+    <img src="img/storm.jpg" alt="" class="bgIMG">
+    <div class="bgDIV"></div>
+    <!--AUDIO-->
+    <audio src="audio/storm.mp3" preload="none" id="music"></audio>
+    <!--HEADER-->
+    <header class="headerBox">
+        <img src="img/storm.jpg" alt="">
+        <h1>暴风雨（Storm）</h1>
+        <h2>Higher Brothers</h2>
+        <a href="javascript:;" class="playButton"></a>
+    </header>
+    <!--CONTAINER-->
+    <section class="contentBox">
+        <div class="wrapper">
+            <!--<p></p>-->
+        </div>
+    </section>
+    <!--FOOTER-->
+    <footer class="footerBox">
+        <span class="already">00:00</span>
+        <span class="duration">00:00</span>
+        <div class="progress">
+            <div class="current"></div>
+        </div>
+        <a href="#" class="download">下载这首音乐</a>
+    </footer>
+</main>
+<script src="js/zepto.min.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
