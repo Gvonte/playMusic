@@ -56,7 +56,7 @@ let musicRender = (function () {
             console.log(music.paused);//=>为什么输出的次数会随着播放的次数增加，比如我播一遍是打印1次，播第二遍就是打印2次了，播第三遍就是打印3次了
             //=>音乐播放完之后再播放就会出bug？还会导致tap的bug(执行多次)？
             if (music.paused) {
-                // music.play();//=>跟这个有关，去掉这行就不会执行多次
+                music.play();//=>跟这个有关，去掉这行就不会执行多次
                 $playButton.addClass('active');
                 handlePlay();
             } else {
